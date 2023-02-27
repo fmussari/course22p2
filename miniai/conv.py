@@ -20,7 +20,9 @@ def conv(ni, nf, ks=3, stride=2, act=True):
     return res
 
 # %% ../nbs/07_convolutions.ipynb 74
-def_device = 'mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu'
+# I couldn't update PyTorch, so, for local execution, removed 'mps' reference
+#def_device = 'mps' if torch.backends.mps.is_available() else 'cuda' if torch.cuda.is_available() else 'cpu'
+def_device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 def to_device(x, device=def_device):
     if isinstance(x, torch.Tensor): return x.to(device)
