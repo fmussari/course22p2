@@ -12,6 +12,10 @@ from .learner import *
 from .activations import *
 from .init import *
 
+## FM
+# added to avoid NameError: name 'plt' is not defined
+import matplotlib.pyplot as plt
+
 # %% ../nbs/12_accel_sgd.ipynb 45
 class BaseSchedCB(Callback):
     def __init__(self, sched): self.sched = sched
